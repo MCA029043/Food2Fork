@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-color: white;
+}
+header{
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    
+}
+#nav{
+    display: flex;
+    margin-left: 30px;
+}
+ul{
+    display: flex;
+}
+li{
+    list-style: none;
+    margin: 0 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    background-image: url("homeBcg.jpeg");
+    background-size: cover!important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 617px;
+}
+#home{
+     text-align: center;
+}
+h1{
+    font-size: 70px;
+    font-family: 'Courgette', cursive;
+    text-transform: uppercase;
+    font-weight:700;
+    color: white;
+    letter-spacing: 14px;
+}
+#button{
+    font-size: 18px;
+    font-weight: 100;
+    background-color: #1f88be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 35px;
+    padding:10px 18px;
+    font-family:Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+#search{
+    text-align: center;
+}
+h2{
+    font-family: 'Courgette', cursive;
+    font-size: 32px;
+}
+h4{
+    font-size: 18px;
+    font-weight: 200;
+}
+span{
+    color: #ff3333;
+}
+#searchbox{
+    border: 1px solid #85b7d9;
+    width: 630px;
+    height: 38px;
+    border-radius: 6px;
+    padding: 10px 14px;
+}
+::placeholder{
+    color: rgb(179, 184, 184);
+}
+#btn2{
+    height: 38px;
+    width: 38px;
+    background-color: #1678c2;
+    border: none;
+    border-radius: 6px;
+    margin-left: -10px;
+}
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#backButton{
+    font-size: 14px;
+    background-color: #fbbd08;
+    text-decoration: none;
+    height: 36px;
+    width: 152px;
+    margin: 20px;
+    display: inline-block;
+    border: none;
+}
+#backButton a{
+    color: white;
+}
+#thirdPage{
+    font-size: 14px;
+    background-color: white;
+    padding: 14px;
+    width: 90%;
+    margin: 30px;
+}
+#publish{
+    background-color: #2185d0;
+    text-shadow: none;
+    border: none;
+    height: 36px;
+    width: 152px;
+
+
+}
+.detail{
+    background-color: #2185d0;
+    color: #fff;
+    text-shadow: none;
+    border: none;
+    margin: 20px;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+#publish a{
+    color: white;
+}
