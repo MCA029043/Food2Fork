@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <img src="logo.cc3fff7e.svg">
+           <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="page2.html">Recipes</a></li>
+           </ul>
+        </nav>
+    </header>
+        <section id="thirdPage" style="display: flex;">
+            <div style="display: inline-block;">
+            <button id="backButton"><a href="page2.html"> Back to recipe list</a></button>
+            <img id="recipe-image" src="" alt="Recipe Image"></div>
+            <div class="ingred">
+            <h3 id="recipe-title">Recipe Title</h3>
+            <h4>Ingredients</h4>
+            <pre id="recipe-ingredients"></pre>
+            <button id="publish"><a href="https://www.closetcooking.com/">Publisher Webpage</a></button>
+        </section>
+    </main>
+    <!--<script src="script.js"></script>-->
+    <script>
+    // Function to fetch a specific recipe based on its ID from the Forkify API
+        function fetchRecipeDetails(recipeId) {
+            const API_URL = `https://forkify-api.herokuapp.com/api/get?rId=${recipeId}`;
+
+            fetch(API_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Assuming the API response contains recipe details
+                    const recipeDetails = data.recipe;
+                    displayRecipeDetails(recipeDetails);
+                })
+                .catch(error => {
+                    console.error('Error fetching recipe details:', error);
+                });
+        }
+
+        // Function to display recipe details on the page
+        function displayRecipeDetails(recipeDetails) {
+            // Get the HTML elements where you want to display recipe details
+            const recipeTitleElement = document.getElementById('recipe-title');
+            const recipeIngredientsElement = document.getElementById('recipe-ingredients');
+           
+            const recipeImageElement = document.getElementById('recipe-image');
+
+            // Update the elements with the recipe details
+            recipeTitleElement.textContent = recipeDetails.title;
+            recipeIngredientsElement.textContent = recipeDetails.ingredients.join('\n');
+           
+            recipeImageElement.src = recipeDetails.image_url;
+            recipeImageElement.alt = recipeDetails.title;
+        }
+
+        // Function to extract the recipeId from the query parameter
+        function getRecipeIdFromQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get('recipeId');
+        }
+
+        // Load and display the recipe details when the page loads
+        const recipeId = getRecipeIdFromQuery();
+        if (recipeId) {
+            fetchRecipeDetails(recipeId);
+        }
+    </script>
+</body>
+</html>
