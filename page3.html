@@ -19,7 +19,7 @@
     </header>
         <section id="thirdPage" style="display: flex;">
             <div style="display: inline-block;">
-            <button id="backButton"><a href="page2.html"> Back to recipe list</a></button>
+            <button id="backButton" onclick="handleBackButton()">Back to recipe list</button>
             <img id="recipe-image" src="" alt="Recipe Image"></div>
             <div class="ingred">
             <h3 id="recipe-title">Recipe Title</h3>
@@ -30,6 +30,15 @@
     </main>
     <!--<script src="script.js"></script>-->
     <script>
+         // Function to handle the back button click event
+         function handleBackButton() {
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', () => {
+                // Redirect back to page2.html when the button is clicked
+                window.location.href = 'page2.html';
+            });
+        }
+
     // Function to fetch a specific recipe based on its ID from the Forkify API
         function fetchRecipeDetails(recipeId) {
             const API_URL = `https://forkify-api.herokuapp.com/api/get?rId=${recipeId}`;
