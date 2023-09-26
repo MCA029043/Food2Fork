@@ -22,13 +22,19 @@
             <h2>Search Recipes With <span>Food2Fork</span></h2>
             <h4>Type Recipes Separated By Comma</h4>
             <input id="searchbox" type="search" placeholder="chicken,onion,carrots">
-            <button id="btn2"><i style="color: white;" class="fa fa-magnifying-glass"></i></button>
-            <h2>Recipe list</h2>
+            <button onclick="myFunction()" id="btn2"><i style="color: white;" class="fa fa-magnifying-glass"></i></button>
+            <h2 id="rList">Recipe list</h2>
         </div>
-        <div id="results" class="recipe-list">
+        <div id="results" class="recipe-list" style="margin-left: 10%;">
             <!-- Results will be displayed here -->
         </div>
     </section>
+    <script>
+        function myFunction() {
+            const searchboxValue = document.getElementById("searchbox").value;
+            document.getElementById("rList").textContent = "Recipe List For " + searchboxValue;
+        }
+        </script>
     <script src="script.js"></script>
 </body>
 </html>
