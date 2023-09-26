@@ -18,6 +18,7 @@ function fetchRecipes(searchQuery) {
             console.error('Error fetching data:', error);
         });
 }
+
 // Function to display recipes on the page
 function displayRecipes(recipes) {
     const resultsContainer = document.getElementById('results');
