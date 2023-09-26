@@ -103,9 +103,8 @@ span{
     margin: 20px;
     display: inline-block;
     border: none;
-}
-#backButton a{
     color: white;
+    cursor: pointer;
 }
 #thirdPage{
     font-size: 14px;
@@ -131,7 +130,9 @@ span{
     margin: 20px;
     font-size: 14px;
     padding: 10px 20px;
+    cursor: pointer;
 }
 #publish a{
     color: white;
 }
+
