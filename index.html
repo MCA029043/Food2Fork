@@ -22,12 +22,25 @@
     <main>
         <div id="home">
            <h1 style="padding-top: 15%; margin: 0;">Amazing Recipes</h1>
-           <button id="button"><a style="font-size: 26px;
-            font-weight: 700;
-            background-color: #1f88be;
-            color: white; text-decoration: none;" href="page2.html">Search Recipes</a></button>
+           <button id="button" style="font-size: 26px;
+           font-weight: 700;
+           background-color: #1f88be;
+           color: white; text-decoration: none;">Search Recipes</button>
         </div>
     </main>
+    <script>
+        // Function to handle the search button click on the Home Page
+          function handleSearchHome() {
+              const searchButton = document.getElementById('button');
+              searchButton.addEventListener('click', () => {
+                  window.location.href = 'page2.html';
+              });
+          }
+
+        // Add an event listener to the search button on the Home Page
+        handleSearchHome();
+
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
